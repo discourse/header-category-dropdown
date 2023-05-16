@@ -1,0 +1,83 @@
+@import "mixins";
+@import "buttons";
+
+.custom-header-links {
+  .top-level-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    .custom-header-link {
+      padding-block: 1rem;
+      cursor: default;
+
+      a {
+        color: $main_link_color;
+      }
+
+      &-caret {
+        margin-left: 0.5rem;
+        svg {
+          transition: transform 0.25s ease;
+          color: $main_link_color;
+        }
+      }
+
+      &:hover {
+        a {
+          color: $main_link_hover_color;
+        }
+
+        .custom-header-dropdown {
+          transform: scale(1);
+          transition-delay: 0s;
+        }
+
+        .custom-header-link-caret svg {
+          transform: rotate(90deg);
+          color: $main_link_hover_color;
+        }
+      }
+
+      cursor: pointer;
+    }
+  }
+
+  .custom-header-dropdown {
+    @include dropdown;
+    min-width: 200px;
+    max-width: 280px;
+    list-style: none;
+    transform: scale(0);
+    transition: transform 0.2s ease;
+    transition-delay: 0.3s;
+
+    &-link {
+      color: $dropdown_item_color;
+      padding: 0.5em;
+      cursor: pointer;
+      font-weight: bold;
+      display: flex;
+      flex-flow: row wrap;
+
+      .custom-header-link-desc {
+        flex-basis: 100%;
+        margin-top: 0.3em;
+        font-size: 0.9em;
+        font-weight: 400;
+      }
+
+      &:hover {
+        color: $dropdown_item_hover_color;
+        background: $dropdown_item_hover_background_color;
+      }
+    }
+  }
+}
+
+// hide on scroll when nav is positioned to left of header:
+.title .custom-header-links.scrolling {
+  display: none;
+}

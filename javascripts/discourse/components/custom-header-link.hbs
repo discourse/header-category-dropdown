@@ -1,0 +1,17 @@
+<li class="custom-header-link" title={{@item.title}}>
+  <span class="custom-header-link-title">
+    <a
+      class="category-link"
+      href={{@item.url}}
+      {{on "click" (fn @onClick)}}
+    >{{@item.title}}</a>
+  </span>
+  {{#if this.dropdownLinks}}
+    <span class="custom-header-link-caret">{{d-icon "caret-down"}}</span>
+    <ul class="custom-header-dropdown">
+      {{#each this.dropdownLinks as |link|}}
+        <CustomHeaderDropdown @link={{link}} @onClick={{@onClick}} />
+      {{/each}}
+    </ul>
+  {{/if}}
+</li>

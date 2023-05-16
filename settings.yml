@@ -1,0 +1,40 @@
+show_category_ids:
+  default: ""
+  type: list
+  description:
+    en: "List of category IDs to show in the dropdown. Leave blank to show all categories."
+main_link_color:
+  default: "var(--primary-low-mid)"
+  type: string
+  description:
+    en: "Color of main top level links. Note: it is recommended to use a <a target='_blank' href='https://github.com/discourse/discourse/blob/main/app/assets/stylesheets/color_definitions.scss'>color variable</a> so dark mode will be supported."
+main_link_hover_color:
+  default: "var(--primary-medium)"
+  type: string
+  description:
+    en: "Color of main top level links when hovered over. Note: it is recommended to use a <a target='_blank' href='https://github.com/discourse/discourse/blob/main/app/assets/stylesheets/color_definitions.scss'>color variable</a> so dark mode will be supported."
+dropdown_background_color:
+  default: "var(--secondary)"
+  type: string
+  description:
+    en: "The background color of dropdowns. Note: it is recommended to use a <a target='_blank' href='https://github.com/discourse/discourse/blob/main/app/assets/stylesheets/color_definitions.scss'>color variable</a> so dark mode will be supported."
+dropdown_border_color:
+  default: "var(--primary-low)"
+  type: string
+  description:
+    en: "The border color of dropdowns (use 'transparent' to hide borders). Note: it is recommended to use a <a target='_blank' href='https://github.com/discourse/discourse/blob/main/app/assets/stylesheets/color_definitions.scss'>color variable</a> so dark mode will be supported."
+dropdown_item_color:
+  default: "var(--primary-medium)"
+  type: string
+  description:
+    en: "Color of dropdown links. Note: it is recommended to use a <a target='_blank' href='https://github.com/discourse/discourse/blob/main/app/assets/stylesheets/color_definitions.scss'>color variable</a> so dark mode will be supported."
+dropdown_item_hover_color:
+  default: "var(--primary-medium)"
+  type: string
+  description:
+    en: "Color of dropdown links when hovered over. Note: it is recommended to use a <a target='_blank' href='https://github.com/discourse/discourse/blob/main/app/assets/stylesheets/color_definitions.scss'>color variable</a> so dark mode will be supported."
+dropdown_item_hover_background_color:
+  default: "var(--highlight-medium)"
+  type: string
+  description:
+    en: "Background color of dropdown links when hovered over. Note: it is recommended to use a <a target='_blank' href='https://github.com/discourse/discourse/blob/main/app/assets/stylesheets/color_definitions.scss'>color variable</a> so dark mode will be supported."
