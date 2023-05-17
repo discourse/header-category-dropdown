@@ -16,10 +16,6 @@ export default apiInitializer("0.11.1", (api) => {
     },
   });
 
-  if (!settings.show_category_ids) {
-    return;
-  }
-
   api.decorateWidget("home-logo:after", (helper) => {
     const scrolling = helper.attrs.minimized;
     return helper.attach("custom-header-links");

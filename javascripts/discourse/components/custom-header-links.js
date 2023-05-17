@@ -31,15 +31,20 @@ export default class CustomHeaderLinks extends Component {
   }
 
   get headerLinks() {
-    const categories = this.site.categories;
-    const show_category_ids = settings.show_category_ids.split("|");
-    const filteredCategories = categories.filter((category) => {
-      return (
-        show_category_ids.includes(category.id.toString()) &&
-        !category.parent_category_id
-      );
-    });
-    const headerLinks = filteredCategories.map((category) => {
+    let categories = this.site.categoriesList;
+    const hide_category_ids = settings.hide_category_ids
+      .split("|")
+      .filter(Boolean);
+
+    if (hide_category_ids.length > 0) {
+      categories = categories.filter((category) => {
+        return (
+          !hide_category_ids.includes(category.id.toString()) &&
+          !category.parent_category_id
+        );
+      });
+    }
+    const headerLinks = categories.map((category) => {
       return {
         id: category.id,
         title: category.name,

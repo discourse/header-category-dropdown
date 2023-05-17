@@ -1,8 +1,8 @@
-show_category_ids:
+hide_category_ids:
   default: ""
   type: list
   description:
-    en: "List of category IDs to show in the dropdown. Leave blank to show all categories."
+    en: "List of category IDs to hide from the header dropdown."
 main_link_color:
   default: "var(--primary-low-mid)"
   type: string
