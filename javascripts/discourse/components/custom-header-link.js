@@ -7,7 +7,7 @@ export default class CustomHeaderLinks extends Component {
   get dropdownLinks() {
     const filteredCategories = this.site.categories.filter((category) => {
       return (
-        settings.show_category_ids.includes(category.id.toString()) &&
+        !settings.hide_category_ids.includes(category.id.toString()) &&
         category.parent_category_id
       );
     });
