@@ -32,7 +32,10 @@ export default class CustomHeaderLinks extends Component {
 
   get headerLinks() {
     let categories = this.site.categoriesList;
-    const hide_category_ids = settings.hide_category_ids.split("|");
+    const hide_category_ids = settings.hide_category_ids
+      .split("|")
+      .filter(Boolean);
+
     if (hide_category_ids.length > 0) {
       categories = categories.filter((category) => {
         return (
