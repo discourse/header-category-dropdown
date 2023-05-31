@@ -76,7 +76,7 @@
   }
 }
 
-// hide on scroll when nav is positioned to left of header:
-.title .custom-header-links.scrolling {
+// hide custom nav on scroll
+.title--minimized .custom-header-links {
   display: none;
 }
