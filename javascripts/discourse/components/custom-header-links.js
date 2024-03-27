@@ -1,7 +1,7 @@
 import Component from "@glimmer/component";
-import { inject as service } from "@ember/service";
 import { tracked } from "@glimmer/tracking";
 import { action } from "@ember/object";
+import { service } from "@ember/service";
 import { bind } from "discourse-common/utils/decorators";
 
 export default class CustomHeaderLinks extends Component {
@@ -17,6 +17,7 @@ export default class CustomHeaderLinks extends Component {
   }
 
   willDestroy() {
+    super.willDestroy(...arguments);
     if (this.site.mobileView) {
       document.removeEventListener("click", this.outsideClick);
     }

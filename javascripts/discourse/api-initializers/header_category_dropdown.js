@@ -1,11 +1,11 @@
-import { apiInitializer } from "discourse/lib/api";
-import { createWidget } from "discourse/widgets/widget";
 import { hbs } from "ember-cli-htmlbars";
+import { apiInitializer } from "discourse/lib/api";
 import RenderGlimmer from "discourse/widgets/render-glimmer";
+import { createWidget } from "discourse/widgets/widget";
 
 export default apiInitializer("0.11.1", (api) => {
   createWidget("custom-header-links", {
-    html(attrs) {
+    html() {
       return [
         new RenderGlimmer(
           this,
@@ -17,7 +17,6 @@ export default apiInitializer("0.11.1", (api) => {
   });
 
   api.decorateWidget("home-logo:after", (helper) => {
-    const scrolling = helper.attrs.minimized;
     return helper.attach("custom-header-links");
   });
 });

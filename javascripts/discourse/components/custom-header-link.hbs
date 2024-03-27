@@ -3,7 +3,7 @@
     <a
       class="category-link"
       href={{@item.url}}
-      {{on "click" (fn @onClick)}}
+      {{on "click" @onClick}}
     >{{@item.title}}</a>
   </span>
   {{#if this.dropdownLinks}}
