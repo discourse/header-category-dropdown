@@ -3,3 +3,13 @@
     display: none;
   }
 }
+
+.before-header-panel-outlet:has(.custom-header-links) {
+  flex: 0 auto;
+  margin: 0 auto;
+  overflow: hidden;
+
+  + .panel {
+    margin-left: 0;
+  }
+}
