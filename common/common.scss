@@ -10,7 +10,7 @@
 
     .custom-header-link {
       padding-block: 1rem;
-      cursor: default;
+      cursor: pointer;
 
       a {
         color: $main_link_color;
@@ -38,8 +38,6 @@
           color: $main_link_hover_color;
         }
       }
-
-      cursor: pointer;
     }
   }
 
@@ -60,16 +58,16 @@
       display: flex;
       flex-flow: row wrap;
 
+      &:hover {
+        color: $dropdown_item_hover_color;
+        background: $dropdown_item_hover_background_color;
+      }
+
       .custom-header-link-desc {
         flex-basis: 100%;
         margin-top: 0.3em;
         font-size: 0.9em;
         font-weight: 400;
-      }
-
-      &:hover {
-        color: $dropdown_item_hover_color;
-        background: $dropdown_item_hover_background_color;
       }
     }
   }
