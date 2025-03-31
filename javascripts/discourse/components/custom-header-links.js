@@ -6,6 +6,7 @@ import { bind } from "discourse/lib/decorators";
 
 export default class CustomHeaderLinks extends Component {
   @service site;
+
   @tracked showLinks = !this.site.mobileView;
 
   constructor() {
