@@ -2,7 +2,9 @@ import Component from "@glimmer/component";
 import { tracked } from "@glimmer/tracking";
 import { action } from "@ember/object";
 import { service } from "@ember/service";
+import DButton from "discourse/components/d-button";
 import { bind } from "discourse/lib/decorators";
+import CustomHeaderLink from "./custom-header-link";
 
 export default class CustomHeaderLinks extends Component {
   @service site;
@@ -69,4 +71,29 @@ export default class CustomHeaderLinks extends Component {
       document.body.classList.remove("dropdown-header-open");
     }
   }
+
+  <template>
+    <nav class="custom-header-links">
+      {{#if this.site.mobileView}}
+        <span class="btn-custom-header-dropdown-mobile">
+          <DButton
+            @icon="square-caret-down"
+            @title="header_category_dropdown.show_header_links"
+            @action={{action this.toggleHeaderLinks}}
+          />
+        </span>
+      {{/if}}
+      {{#if this.showLinks}}
+        <ul class="top-level-links">
+          {{#each this.headerLinks as |item|}}
+            <CustomHeaderLink
+              @item={{item}}
+              @showHeaderLinks={{this.showLinks}}
+              @onClick={{this.toggleHeaderLinks}}
+            />
+          {{/each}}
+        </ul>
+      {{/if}}
+    </nav>
+  </template>
 }
