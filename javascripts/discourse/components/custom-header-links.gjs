@@ -79,7 +79,7 @@ export default class CustomHeaderLinks extends Component {
           <DButton
             @icon="square-caret-down"
             @title="header_category_dropdown.show_header_links"
-            @action={{action this.toggleHeaderLinks}}
+            @action={{this.toggleHeaderLinks}}
           />
         </span>
       {{/if}}
